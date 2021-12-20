@@ -40,7 +40,7 @@ public class GunShoot : MonoBehaviour
 
         if (PlayerWeapons.PST_select == 0) { //Accounts for primary selected
 
-            if (Primary.primarySelect == " PissBaby") {
+            if (Primary.primarySelect == "PissBaby") {
                 pissBabyObj.SetActive(true);
                 if (Time.time > pb_nextFireTime) {
                     if (Input.GetMouseButtonDown(0)) {
@@ -50,7 +50,7 @@ public class GunShoot : MonoBehaviour
                 }
             } else { pissBabyObj.SetActive(false); }
 
-            if (Primary.primarySelect == " PissMan") {
+            if (Primary.primarySelect == "PissMan") {
                 pissManObj.SetActive(true);
                 if (Time.time > pm_nextFireTime) {
                     if (Input.GetMouseButton(0)) {
@@ -63,7 +63,7 @@ public class GunShoot : MonoBehaviour
 
         if (PlayerWeapons.PST_select == 1) { //Accounts for secondary selected
 
-            if (Secondary.secondarySelect == " PissBaby") {
+            if (Secondary.secondarySelect == "PissBaby") {
                 pissBabyObj.SetActive(true);
                 if (Time.time > pb_nextFireTime) {
                     if (Input.GetMouseButtonDown(0)) {
@@ -73,7 +73,7 @@ public class GunShoot : MonoBehaviour
                 }
             } else { pissBabyObj.SetActive(false); }
 
-            if (Secondary.secondarySelect == " PissMan") {
+            if (Secondary.secondarySelect == "PissMan") {
                 pissManObj.SetActive(true);
                 if (Time.time > pm_nextFireTime) {
                     if (Input.GetMouseButton(0)) {

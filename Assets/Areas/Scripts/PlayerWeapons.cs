@@ -13,7 +13,10 @@ public class PlayerWeapons : MonoBehaviour
     [SerializeField] public bool pmOwned = false;
     public bool pmOwn;
 
+
+
     public static int PST_select; //Primary 0, secondary 1, trinary 2
+    
 
     private void Awake() {
     }
@@ -21,10 +24,19 @@ public class PlayerWeapons : MonoBehaviour
     private void Start() {
 
     }
+
     void Update() {
         relayWeapons();
         currentSelect();
-        print("Current select is "+ PST_select);
+
+        /*foreach(var item in primarySecondaryOptions) {
+            print(item);
+        }*/
+
+        //print("Current select is "+ PST_select);
+
+
+        //print(primaryDropdown.options[primaryDropdown.value].text);
     }
 
     public void currentSelect() {
@@ -36,6 +48,7 @@ public class PlayerWeapons : MonoBehaviour
             PST_select = 2;
         }
     }
+
 
     /*Relay*/
     private void relayWeapons() {

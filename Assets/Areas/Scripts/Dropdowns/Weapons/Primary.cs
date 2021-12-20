@@ -3,56 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using TMPro;
 
 public class Primary : MonoBehaviour
 {
     int primLayer;
+    public TMP_Dropdown primaryDropdown;
 
     public static string primarySelect;
     // Start is called before the first frame update
     void Start()
     {
-        primLayer = LayerMask.NameToLayer("primLayer");
+        
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetMouseButtonDown(0) && IsPointerOverUIElement()) {
-            primarySelect = EventSystem.current.currentSelectedGameObject.name.Split(':')[1];
-            /*if (primarySelect == " PissMan") {
-                print("PissMan selected");
-            }
-            else if (primarySelect == " PissBaby") {
-                print("PissBaby selected");
-            }*/
-        }
-        //print("Primary is" + primarySelect);
-    }
+    void Update() {
+        primarySelect = primaryDropdown.options[primaryDropdown.value].text;
 
-    //Returns 'true' if we touched or hovering on Unity UI element.
-    public bool IsPointerOverUIElement() {
-        return IsPointerOverUIElement(GetEventSystemRaycastResults());
-    }
-
-
-    //Returns 'true' if we touched or hovering on Unity UI element.
-    private bool IsPointerOverUIElement(List<RaycastResult> eventSystemRaysastResults) {
-        for (int index = 0; index < eventSystemRaysastResults.Count; index++) {
-            RaycastResult curRaysastResult = eventSystemRaysastResults[index];
-            if (curRaysastResult.gameObject.layer == primLayer)
-                return true;
-        }
-        return false;
-    }
-
-
-    //Gets all event system raycast results of current mouse or touch position.
-    static List<RaycastResult> GetEventSystemRaycastResults() {
-        PointerEventData eventData = new PointerEventData(EventSystem.current);
-        eventData.position = Input.mousePosition;
-        List<RaycastResult> raysastResults = new List<RaycastResult>();
-        EventSystem.current.RaycastAll(eventData, raysastResults);
-        return raysastResults;
     }
 }

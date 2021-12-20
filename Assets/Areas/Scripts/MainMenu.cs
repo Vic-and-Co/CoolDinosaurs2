@@ -10,7 +10,7 @@ public class MainMenu : MonoBehaviour {
         mainMenu.SetActive(true);
     }
 
-    public void playGame() {
-        SceneManager.LoadScene("MainArea");
+    public void enterIntro() {
+        SceneManager.LoadScene("IntroText");
     }
 }

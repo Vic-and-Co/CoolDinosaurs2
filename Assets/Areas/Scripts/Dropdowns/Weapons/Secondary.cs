@@ -3,57 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using TMPro;
 
 public class Secondary : MonoBehaviour
 {
     int secLayer;
+    public TMP_Dropdown secondaryDropdown;
 
     public static string secondarySelect;
 
     // Start is called before the first frame update
     private void Start() {
-        secLayer = LayerMask.NameToLayer("secLayer");
+
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetMouseButtonDown(0) && IsPointerOverUIElement()) {
-            secondarySelect = EventSystem.current.currentSelectedGameObject.name.Split(':')[1];
-            /*if (primarySelect == " PissMan") {
-                print("PissMan selected");
-            }
-            else if (primarySelect == " PissBaby") {
-                print("PissBaby selected");
-            }*/
-        }
-        //print("Secondary is" + secondarySelect);
-    }
-
-    //Returns 'true' if we touched or hovering on Unity UI element.
-    public bool IsPointerOverUIElement() {
-        return IsPointerOverUIElement(GetEventSystemRaycastResults());
-    }
-
-
-    //Returns 'true' if we touched or hovering on Unity UI element.
-    private bool IsPointerOverUIElement(List<RaycastResult> eventSystemRaysastResults) {
-        for (int index = 0; index < eventSystemRaysastResults.Count; index++) {
-            RaycastResult curRaysastResult = eventSystemRaysastResults[index];
-            if (curRaysastResult.gameObject.layer == secLayer)
-                return true;
-        }
-        return false;
-    }
-
-
-    //Gets all event system raycast results of current mouse or touch position.
-    static List<RaycastResult> GetEventSystemRaycastResults() {
-        PointerEventData eventData = new PointerEventData(EventSystem.current);
-        eventData.position = Input.mousePosition;
-        List<RaycastResult> raysastResults = new List<RaycastResult>();
-        EventSystem.current.RaycastAll(eventData, raysastResults);
-        return raysastResults;
+    void Update() {
+        secondarySelect = secondaryDropdown.options[secondaryDropdown.value].text;
     }
 
 }

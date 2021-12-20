@@ -39,8 +39,8 @@ public class PlayerMovement : MonoBehaviour
     void Start() {
         jumpCount = 2;
 
-        Primary.primarySelect = " PissMan";
-        Secondary.secondarySelect = " PissBaby";
+        Primary.primarySelect = "None";
+        Secondary.secondarySelect = "None";
     }
 
     private void Awake() {
@@ -56,8 +56,8 @@ public class PlayerMovement : MonoBehaviour
         checkEquippables();
         checkModifiers();
 
-        print("Primary is" + Primary.primarySelect);
-        print("Secondary is" + Secondary.secondarySelect);
+        //print("Primary is " + Primary.primarySelect);
+        //print("Secondary is " + Secondary.secondarySelect);
     }
 
     private void jump() {
