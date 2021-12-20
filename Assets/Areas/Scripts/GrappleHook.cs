@@ -9,6 +9,7 @@ public class GrappleHook : MonoBehaviour {
     public LayerMask grappleObjects;
     public float moveSpeed = 10;
     public float grappleLength = 10;
+    public static bool grappled = false;
     [Min(1)]
     public int maxPoints = 1;
 
@@ -33,6 +34,7 @@ public class GrappleHook : MonoBehaviour {
     }
 
     public void Detatch() {
+        grappled = false;
         lr.positionCount = 0;
         points.Clear();
     }
@@ -62,8 +64,8 @@ public class GrappleHook : MonoBehaviour {
 
     private void keyPressPhys() {
         if (grappleOn) {
-            print("Grapple ON");
             if (Input.GetKey(KeyCode.E)) {
+                grappled = true;
                 Vector2 mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
                 Vector2 direction = (mousePos - (Vector2)transform.position).normalized;
 
@@ -77,7 +79,7 @@ public class GrappleHook : MonoBehaviour {
                     }
                 }
             }
-        } else { print("GRAPPLE OFF"); }
+        }
     }
 
     private void OnDrawGizmos() {

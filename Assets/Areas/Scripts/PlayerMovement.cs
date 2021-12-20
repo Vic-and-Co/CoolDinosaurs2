@@ -29,6 +29,8 @@ public class PlayerMovement : MonoBehaviour
     public bool aidsBootOn;
     public bool dashOn;
 
+    public bool grappled = GrappleHook.grappled;
+
     //Util Modifiers
     public int aidsBootSpeed;
 
@@ -36,11 +38,13 @@ public class PlayerMovement : MonoBehaviour
 
     void Start() {
         jumpCount = 2;
+
+        Primary.primarySelect = " PissMan";
+        Secondary.secondarySelect = " PissBaby";
     }
 
     private void Awake() {
         body = GetComponent<Rigidbody2D>();
-        
     }
 
     // Update is called once per frame
@@ -51,10 +55,13 @@ public class PlayerMovement : MonoBehaviour
 
         checkEquippables();
         checkModifiers();
+
+        print("Primary is" + Primary.primarySelect);
+        print("Secondary is" + Secondary.secondarySelect);
     }
 
     private void jump() {
-        if (tabiOn) {
+        if (tabiOn && !grappled) {
 
             if (Input.GetButtonDown("Jump") && jumpCount < maxJump) {
                 body.velocity = new Vector2(body.velocity.y, jumpHeight);
@@ -102,9 +109,12 @@ public class PlayerMovement : MonoBehaviour
     private void dirFacing() {
         if (Input.GetKey(KeyCode.D)) {
             facingR = true;
+            transform.localRotation = Quaternion.Euler(0, 0, 0);
+
         }
         else if (Input.GetKey(KeyCode.A)) {
             facingR = false;
+            transform.localRotation = Quaternion.Euler(0, 180, 0);
         }
     }
 
@@ -126,6 +136,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void checkModifiers() {
         aidsBootSpeed = PlayerTools.aidsBootSpeed;
+        grappled = GrappleHook.grappled;
     }
 
 }
