@@ -55,9 +55,11 @@
   <ItemGroup>
     <Compile Include="Assets\Areas\Scripts\WeaponPickup.cs" />
     <Compile Include="Assets\Areas\Scripts\CharMenu.cs" />
+    <Compile Include="Assets\Areas\Scripts\Npc\DummyScript.cs" />
     <Compile Include="Assets\Areas\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Areas\Scripts\GrappleHook.cs" />
     <Compile Include="Assets\Areas\Scripts\PlayerMovement.cs" />
+    <Compile Include="Assets\Areas\Scripts\Objectives.cs" />
     <Compile Include="Assets\Areas\Scripts\TextScenes\Introduction.cs" />
     <Compile Include="Assets\Areas\Scripts\CamMovement.cs" />
     <Compile Include="Assets\Areas\Scripts\BulletCollide.cs" />
@@ -66,8 +68,7 @@
     <Compile Include="Assets\Areas\Scripts\PlayerWeapons.cs" />
     <Compile Include="Assets\Areas\Scripts\Dropdowns\Weapons\Primary.cs" />
     <Compile Include="Assets\Areas\Scripts\GunShoot.cs" />
-    <Compile Include="Assets\Areas\Scripts\Objectives.cs" />
-    <Compile Include="Assets\Areas\Scripts\Npc\DummyScript.cs" />
+    <Compile Include="Assets\Areas\Scripts\Triggers\KillDummyIntro.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

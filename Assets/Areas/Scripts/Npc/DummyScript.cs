@@ -14,6 +14,8 @@ public class DummyScript : MonoBehaviour
     public GameObject pissMan;
     public Transform dropPlace;
 
+    public static bool stepFiveIntro;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +40,7 @@ public class DummyScript : MonoBehaviour
         else if (health == 0) {
             healthbar.gameObject.GetComponent<SpriteRenderer>().sprite = health0;
             dropPissMan();
+            stepFiveIntro = true;
             this.gameObject.SetActive(false);
         }
     }

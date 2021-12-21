@@ -9,10 +9,6 @@ public class CharMenu : MonoBehaviour
     public GameObject utilDrop;
     public GameObject weaponDrop;
 
-    public Toggle aidsBootsTog;
-    public Toggle tabiBootsTog;
-    public Toggle grapplerTog;
-
     public KeyCode charMenuKey = KeyCode.Tab;
 
     public static bool paused;
@@ -30,7 +26,6 @@ public class CharMenu : MonoBehaviour
     void Update()
     {
         menu();
-        utilAllowed();
     }
 
     public void openMenu() {
@@ -87,27 +82,5 @@ public class CharMenu : MonoBehaviour
     }
 
     /*Allow to equip*/
-    public void utilAllowed() {
-        aidsBootAllow();
-        tabiBootAllow();
-        grapplerAllow();
-    }
 
-    public void aidsBootAllow() {
-        if (!PlayerTools.aidsBootOwn) {
-            aidsBootsTog.isOn = false;
-        }
-    }
-
-    public void tabiBootAllow() {
-        if (!PlayerTools.tabiOwn) {
-            tabiBootsTog.isOn = false;
-        }
-    }
-
-    public void grapplerAllow() {
-        if (!PlayerTools.grappleOwn) {
-            grapplerTog.isOn = false;
-        }
-    }
 }

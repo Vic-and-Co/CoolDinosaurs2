@@ -68,7 +68,7 @@ public class GunShoot : MonoBehaviour
                 if (Time.time > pb_nextFireTime) {
                     if (Input.GetMouseButtonDown(0)) {
                         pb_nextFireTime = Time.time + pb_coolDownTime;
-                        shoot(pb_bullet, 1200);
+                        shoot(pb_bullet, 1500);
                     }
                 }
             } else { pissBabyObj.SetActive(false); }
@@ -78,7 +78,7 @@ public class GunShoot : MonoBehaviour
                 if (Time.time > pm_nextFireTime) {
                     if (Input.GetMouseButton(0)) {
                         pm_nextFireTime = Time.time + pm_coolDownTime;
-                        shoot(pm_bullet, 1200);
+                        shoot(pm_bullet, 1500);
                     }
                 }
             } else { pissManObj.SetActive(false); }

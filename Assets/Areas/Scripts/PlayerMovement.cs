@@ -129,9 +129,9 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void checkEquippables() {
-        tabiOn = PlayerTools.tabiOn;
-        aidsBootOn = PlayerTools.aidsBootOn;
-        dashOn = PlayerTools.dashOn;
+        tabiOn = PlayerTools.tabiOwn;
+        aidsBootOn = PlayerTools.aidsBootOwn;
+        dashOn = PlayerTools.dashOwn;
     }
 
     private void checkModifiers() {

@@ -15,7 +15,7 @@ public class GrappleHook : MonoBehaviour {
 
     private Rigidbody2D rig;
     private List<Vector2> points = new List<Vector2>();
-    private bool grappleOn = PlayerTools.grappleOn;
+    private bool grappleOn = PlayerTools.grappleOwn;
 
     private void Start() {
         rig = GetComponent<Rigidbody2D>();
@@ -24,7 +24,7 @@ public class GrappleHook : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        grappleOn = PlayerTools.grappleOn;
+        grappleOn = PlayerTools.grappleOwn;
         keyPressPhys();
         pointCounter();
 
