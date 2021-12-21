@@ -13,7 +13,8 @@ public class WeaponPickup : MonoBehaviour
     public TMP_Dropdown primaryDropdown;
     public TMP_Dropdown secondaryDropdown;
 
-    List<string> primarySecondaryOptions = new List<string>();
+    public static TMP_Dropdown primaryDrop;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,12 +22,15 @@ public class WeaponPickup : MonoBehaviour
         //updateWeaponList();
         //primaryDropdown.options.Add(new TMP_Dropdown.OptionData() { text = "Bruh" });
         //secondaryDropdown.options.Add(new TMP_Dropdown.OptionData() { text = "Bruh" });
+
+        //primaryDropdown.options.RemoveAt(1);
+        //secondaryDropdown.options.RemoveAt(1);
     }
 
     // Update is called once per frame
     void Update()
     {
-        print(primaryDropdown.options[primaryDropdown.value].text);
+        primaryDrop = primaryDropdown;
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
@@ -38,7 +42,14 @@ public class WeaponPickup : MonoBehaviour
     }
 
     public void pickUp(string item) {
-        primaryDropdown.options.Add(new TMP_Dropdown.OptionData() { text = item });
-        secondaryDropdown.options.Add(new TMP_Dropdown.OptionData() { text = item });
+        if (!PlayerWeapons.primarySecondaryOptions.Contains(item)) {
+            //primaryDropdown.options.Add(new TMP_Dropdown.OptionData() { text = item });
+            //secondaryDropdown.options.Add(new TMP_Dropdown.OptionData() { text = item });
+            PlayerWeapons.primarySecondaryOptions.Add(item);
+            PlayerWeapons.addWeapon(item);
+            if (item == "PissBaby") {
+                PlayerWeapons.pbOwn = true;
+            }
+        }
     }
 }

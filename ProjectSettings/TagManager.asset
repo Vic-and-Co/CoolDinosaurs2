@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ground
   - Barrier
+  - pb_bullet
+  - Dummy
   layers:
   - Default
   - TransparentFX
