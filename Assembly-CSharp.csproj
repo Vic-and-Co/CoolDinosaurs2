@@ -57,21 +57,23 @@
     <Compile Include="Assets\Areas\Scripts\CharMenu.cs" />
     <Compile Include="Assets\Areas\Scripts\Npc\DummyScript.cs" />
     <Compile Include="Assets\Areas\Scripts\MainMenu.cs" />
+    <Compile Include="Assets\Areas\Scripts\PlayerHealth.cs" />
     <Compile Include="Assets\Areas\Scripts\GrappleHook.cs" />
+    <Compile Include="Assets\Areas\Scripts\GUI.cs" />
     <Compile Include="Assets\Areas\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Areas\Scripts\Objectives.cs" />
     <Compile Include="Assets\Areas\Scripts\TextScenes\Introduction.cs" />
     <Compile Include="Assets\Areas\Scripts\CamMovement.cs" />
     <Compile Include="Assets\Areas\Scripts\BulletCollide.cs" />
     <Compile Include="Assets\Areas\Scripts\PlayerTools.cs" />
+    <Compile Include="Assets\Areas\Scripts\GUI\SelectVisual.cs" />
     <Compile Include="Assets\Areas\Scripts\Dropdowns\Weapons\Secondary.cs" />
     <Compile Include="Assets\Areas\Scripts\PlayerWeapons.cs" />
     <Compile Include="Assets\Areas\Scripts\Dropdowns\Weapons\Primary.cs" />
     <Compile Include="Assets\Areas\Scripts\Triggers\KillDummyIntro.cs" />
     <Compile Include="Assets\Areas\Scripts\GunShoot.cs" />
-    <Compile Include="Assets\Areas\Scripts\PlayerHealth.cs" />
-    <Compile Include="Assets\Areas\Scripts\GUI\SelectVisual.cs" />
-    <Compile Include="Assets\Areas\Scripts\GUI.cs" />
+    <Compile Include="Assets\Areas\Scripts\ShipScript.cs" />
+    <Compile Include="Assets\Areas\Scripts\MouseFollower.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -753,17 +755,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="AstarPathfindingProjectEditor.csproj">
-      <Project>{72CF0A03-0F69-CDDA-6F4E-5A4B12091477}</Project>
-      <Name>AstarPathfindingProjectEditor</Name>
+    <ProjectReference Include="PackageToolsEditor.csproj">
+      <Project>{FD3739B0-940C-A558-9334-C40134E33EA9}</Project>
+      <Name>PackageToolsEditor</Name>
     </ProjectReference>
     <ProjectReference Include="AstarPathfindingProject.csproj">
       <Project>{410EBBB8-3789-C160-7580-23B04E14ABBC}</Project>
       <Name>AstarPathfindingProject</Name>
     </ProjectReference>
-    <ProjectReference Include="PackageToolsEditor.csproj">
-      <Project>{FD3739B0-940C-A558-9334-C40134E33EA9}</Project>
-      <Name>PackageToolsEditor</Name>
+    <ProjectReference Include="AstarPathfindingProjectEditor.csproj">
+      <Project>{72CF0A03-0F69-CDDA-6F4E-5A4B12091477}</Project>
+      <Name>AstarPathfindingProjectEditor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

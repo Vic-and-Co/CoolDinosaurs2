@@ -59,45 +59,25 @@ public class PlayerMovement : MonoBehaviour
         checkEquippables();
         checkModifiers();
 
-        print(jumpCount);
         //print("Primary is " + Primary.primarySelect);
         //print("Secondary is " + Secondary.secondarySelect);
     }
 
     private void jump() {
         if (tabiOn && !grappled) {
-
-            /*if (Input.GetButtonDown("Jump") && jumpCount < maxJump) {
-                if (jumpCount < 1) {
-                    body.velocity = Vector2.up * jumpForce;
-                } else {
-                    body.velocity = new Vector2(body.velocity.y, jumpHeight);
-                }
-                jumpCount++;
-
-            }*/
-
             if (Input.GetButtonDown("Jump") && grounded) {
-                //body.velocity = new Vector2(body.velocity.y, jumpHeight);
-                //jumpCount++;
-
-                
                 body.velocity = Vector2.up * jumpForce;
             }
 
             if (Input.GetButtonDown("Jump") && jumpCount < boostJump) {
                 jumpTimeCounter = jumpTime;
             }
-
             if (Input.GetButton("Jump")) { //Jump Cut
                 if (jumpTimeCounter > 0 && jumpCount < boostJump) {
                     body.velocity = Vector2.up * jumpForce;
                     jumpTimeCounter -= Time.deltaTime;
 
-                } /*else if (jumpCount < 1) {
-                    jumpCount++;
-                }*/
-
+                } 
             }
 
 
@@ -108,8 +88,6 @@ public class PlayerMovement : MonoBehaviour
 
         } else {
             if (Input.GetButtonDown("Jump") && grounded) {
-                //body.velocity = new Vector2(body.velocity.y, jumpHeight);
-                //jumpCount++;
 
                 jumpTimeCounter = jumpTime;
                 body.velocity = Vector2.up * jumpForce;

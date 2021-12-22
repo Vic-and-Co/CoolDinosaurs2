@@ -35,10 +35,18 @@ public class WeaponPickup : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.collider.tag == "Player") {
-            print("TOUCHING");
             pickUp(item);
             weapon.SetActive(false);
         }
+    }
+
+    public void OnMouseEnter() {
+        MouseFollower.isShown = true;
+        MouseFollower.mouseText = item;
+    }
+
+    public void OnMouseExit() {
+        MouseFollower.isShown = false;
     }
 
     public void pickUp(string item) {

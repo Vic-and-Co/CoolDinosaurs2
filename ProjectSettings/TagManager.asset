@@ -45,6 +45,12 @@ TagManager:
   - name: Background
     uniqueID: 2379215195
     locked: 0
+  - name: BackgroundObj
+    uniqueID: 927787223
+    locked: 0
+  - name: Player
+    uniqueID: 2139134995
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
@@ -59,6 +65,9 @@ TagManager:
     locked: 0
   - name: WeapSelectSprite
     uniqueID: 1749861151
+    locked: 0
+  - name: mouseText
+    uniqueID: 2991420945
     locked: 0
   - name: CharMenu
     uniqueID: 3604111237
