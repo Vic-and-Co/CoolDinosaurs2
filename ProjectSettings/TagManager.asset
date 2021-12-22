@@ -51,3 +51,15 @@ TagManager:
   - name: Gun
     uniqueID: 1702201685
     locked: 0
+  - name: FRONT
+    uniqueID: 1971717257
+    locked: 0
+  - name: WeapSelectUI
+    uniqueID: 1486236761
+    locked: 0
+  - name: WeapSelectSprite
+    uniqueID: 1749861151
+    locked: 0
+  - name: CharMenu
+    uniqueID: 3604111237
+    locked: 0

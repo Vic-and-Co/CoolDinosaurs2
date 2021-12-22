@@ -10,8 +10,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float airSpeed;
     [SerializeField] private float jumpHeight;
+    [SerializeField] private float jumpForce;
 
-    [SerializeField] private int maxJump = 1;
+    [SerializeField] private int boostJump = 2;
 
 
     public Transform groundCheck;
@@ -19,6 +20,8 @@ public class PlayerMovement : MonoBehaviour
     public float checkRadius;
 
     private int jumpCount;
+    private float jumpTimeCounter;
+    public float jumpTime;
 
     private bool grounded;
     private bool jumping;
@@ -56,6 +59,7 @@ public class PlayerMovement : MonoBehaviour
         checkEquippables();
         checkModifiers();
 
+        print(jumpCount);
         //print("Primary is " + Primary.primarySelect);
         //print("Secondary is " + Secondary.secondarySelect);
     }
@@ -63,16 +67,67 @@ public class PlayerMovement : MonoBehaviour
     private void jump() {
         if (tabiOn && !grappled) {
 
-            if (Input.GetButtonDown("Jump") && jumpCount < maxJump) {
-                body.velocity = new Vector2(body.velocity.y, jumpHeight);
+            /*if (Input.GetButtonDown("Jump") && jumpCount < maxJump) {
+                if (jumpCount < 1) {
+                    body.velocity = Vector2.up * jumpForce;
+                } else {
+                    body.velocity = new Vector2(body.velocity.y, jumpHeight);
+                }
+                jumpCount++;
+
+            }*/
+
+            if (Input.GetButtonDown("Jump") && grounded) {
+                //body.velocity = new Vector2(body.velocity.y, jumpHeight);
+                //jumpCount++;
+
+                
+                body.velocity = Vector2.up * jumpForce;
+            }
+
+            if (Input.GetButtonDown("Jump") && jumpCount < boostJump) {
+                jumpTimeCounter = jumpTime;
+            }
+
+            if (Input.GetButton("Jump")) { //Jump Cut
+                if (jumpTimeCounter > 0 && jumpCount < boostJump) {
+                    body.velocity = Vector2.up * jumpForce;
+                    jumpTimeCounter -= Time.deltaTime;
+
+                } /*else if (jumpCount < 1) {
+                    jumpCount++;
+                }*/
+
+            }
+
+
+            if (Input.GetButtonUp("Jump")) {
                 jumpCount++;
             }
 
+
         } else {
             if (Input.GetButtonDown("Jump") && grounded) {
-                body.velocity = new Vector2(body.velocity.y, jumpHeight);
+                //body.velocity = new Vector2(body.velocity.y, jumpHeight);
+                //jumpCount++;
+
+                jumpTimeCounter = jumpTime;
+                body.velocity = Vector2.up * jumpForce;
+            }
+            if(Input.GetButton("Jump")) { //Jump Cut
+                if (jumpTimeCounter > 0 && jumpCount < 1) {
+                    body.velocity = Vector2.up * jumpForce;
+                    jumpTimeCounter -= Time.deltaTime;
+                } else {
+                    jumpCount++;
+                }
+            }
+
+            if(Input.GetButtonUp("Jump")) {
                 jumpCount++;
             }
+
+            
         }
 
         jumping = false;
@@ -122,6 +177,7 @@ public class PlayerMovement : MonoBehaviour
         grounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundObjects);
         if (grounded) {
             jumpCount = 0;
+            jumpTimeCounter = jumpTime;
         } else {
             //jumpCount++;
         }

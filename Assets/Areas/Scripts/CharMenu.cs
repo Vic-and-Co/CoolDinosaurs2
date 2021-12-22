@@ -11,7 +11,7 @@ public class CharMenu : MonoBehaviour
 
     public KeyCode charMenuKey = KeyCode.Tab;
 
-    public static bool paused;
+    public static bool open;
     public bool utilDropped;
     public bool weapDropped;
 
@@ -30,21 +30,25 @@ public class CharMenu : MonoBehaviour
 
     public void openMenu() {
         charMenu.SetActive(true);
-        paused = true;
+        GUI.guiActive = false;
+        Objectives.objectiveActive = false;
+        open = true;
 
         //Time.timeScale = 0f;
     }
 
     public void closeMenu() {
         charMenu.SetActive(false);
-        paused = false;
+        GUI.guiActive = true;
+        Objectives.objectiveActive = true;
+        open = false;
 
         //Time.timeScale = 1f;
     }
 
     public void menu() {
         if (Input.GetKeyDown(KeyCode.Tab)) {
-            if (paused) {
+            if (open) {
                 closeMenu();
             } else {
                 openMenu();
