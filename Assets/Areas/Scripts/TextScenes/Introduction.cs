@@ -55,7 +55,9 @@ public class Introduction : MonoBehaviour
             p5.SetActive(true);
         } else if (currentText >= 5) {
             p5.SetActive(false);
+            WorldManager.currentGameWorld = "TutorialArea";
             SceneManager.LoadScene("MainArea");
+
         }
     }
 

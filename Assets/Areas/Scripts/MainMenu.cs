@@ -8,9 +8,15 @@ public class MainMenu : MonoBehaviour {
 
     public void Start() {
         mainMenu.SetActive(true);
+        SceneManager.UnloadSceneAsync("IntroText");
     }
 
     public void enterIntro() {
+        mainMenu.SetActive(false);
         SceneManager.LoadScene("IntroText");
+    }
+
+    public void printTest() {
+        print("Bruhhhhh");
     }
 }

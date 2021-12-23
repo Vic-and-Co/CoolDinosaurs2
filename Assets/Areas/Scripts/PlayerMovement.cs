@@ -27,6 +27,9 @@ public class PlayerMovement : MonoBehaviour
     private bool jumping;
     private bool facingR;
 
+    public static bool teleport;
+    public static bool teleported;
+
     //Utilities
     public bool tabiOn;
     public bool aidsBootOn;
@@ -55,6 +58,7 @@ public class PlayerMovement : MonoBehaviour
         isGrounded();
         jump();
         xMovement();
+        teleportOnWorldChange();
 
         checkEquippables();
         checkModifiers();
@@ -160,6 +164,22 @@ public class PlayerMovement : MonoBehaviour
             //jumpCount++;
         }
 
+    }
+
+    public static void teleportPlayer() {
+        teleport = true;
+        teleported = false;
+    }
+
+    private void teleportOnWorldChange() {
+        if (teleport & !teleported) {
+            if(WorldManager.currentGameWorld == "MainHub") {
+                //change coords here -30, -63
+                body.position = new Vector3(-30f, -63f);
+                teleport = false;
+                teleported = true;
+            }
+        }
     }
 
     private void checkEquippables() {

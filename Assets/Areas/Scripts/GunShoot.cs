@@ -27,6 +27,9 @@ public class GunShoot : MonoBehaviour
     private float pm_nextFireTime;
     private float pm_coolDownTime = 0.2f;
 
+    public AudioSource pb_shootSound;
+    public AudioSource pm_shootSound;
+
     Vector2 direction;
     void Start()
     {
@@ -43,9 +46,9 @@ public class GunShoot : MonoBehaviour
             if (Primary.primarySelect == "PissBaby") {
                 pissBabyObj.SetActive(true);
                 if (Time.time > pb_nextFireTime) {
-                    if (Input.GetMouseButtonDown(0)) {
+                    if (Input.GetMouseButtonDown(0) && !CharMenu.open) {
                         pb_nextFireTime = Time.time + pb_coolDownTime;
-                        shoot(pb_bullet, 1200);
+                        shoot(pb_bullet, 1200, pb_shootSound);
                     }
                 }
             } else { pissBabyObj.SetActive(false); }
@@ -53,9 +56,9 @@ public class GunShoot : MonoBehaviour
             if (Primary.primarySelect == "PissMan") {
                 pissManObj.SetActive(true);
                 if (Time.time > pm_nextFireTime) {
-                    if (Input.GetMouseButton(0)) {
+                    if (Input.GetMouseButton(0) && !CharMenu.open) {
                         pm_nextFireTime = Time.time + pm_coolDownTime;
-                        shoot(pm_bullet, 1200);
+                        shoot(pm_bullet, 1200, pm_shootSound);
                     }
                 }
             } else  { pissManObj.SetActive(false); }
@@ -66,9 +69,9 @@ public class GunShoot : MonoBehaviour
             if (Secondary.secondarySelect == "PissBaby") {
                 pissBabyObj.SetActive(true);
                 if (Time.time > pb_nextFireTime) {
-                    if (Input.GetMouseButtonDown(0)) {
+                    if (Input.GetMouseButtonDown(0) && !CharMenu.open) {
                         pb_nextFireTime = Time.time + pb_coolDownTime;
-                        shoot(pb_bullet, 1500);
+                        shoot(pb_bullet, 1500, pb_shootSound);
                     }
                 }
             } else { pissBabyObj.SetActive(false); }
@@ -76,9 +79,9 @@ public class GunShoot : MonoBehaviour
             if (Secondary.secondarySelect == "PissMan") {
                 pissManObj.SetActive(true);
                 if (Time.time > pm_nextFireTime) {
-                    if (Input.GetMouseButton(0)) {
+                    if (Input.GetMouseButton(0) && !CharMenu.open) {
                         pm_nextFireTime = Time.time + pm_coolDownTime;
-                        shoot(pm_bullet, 1500);
+                        shoot(pm_bullet, 1500, pm_shootSound);
                     }
                 }
             } else { pissManObj.SetActive(false); }
@@ -93,9 +96,10 @@ public class GunShoot : MonoBehaviour
 
     }
 
-    void shoot(GameObject bullet, float bulletSpeed) {
+    void shoot(GameObject bullet, float bulletSpeed, AudioSource shootSound) {
         GameObject BulletIns = Instantiate(bullet, pb_shootPoint.position, pb_shootPoint.rotation);
         BulletIns.GetComponent<Rigidbody2D>().AddForce(BulletIns.transform.right * bulletSpeed);
+        shootSound.Play();
         Destroy(BulletIns, 3);
     }
 

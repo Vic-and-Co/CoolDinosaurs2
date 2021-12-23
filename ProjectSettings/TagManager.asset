@@ -54,6 +54,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: DefaultFront
+    uniqueID: 3497563149
+    locked: 0
   - name: Gun
     uniqueID: 1702201685
     locked: 0

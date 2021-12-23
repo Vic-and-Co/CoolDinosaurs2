@@ -20,6 +20,12 @@ public class ShipScript : MonoBehaviour
         MouseFollower.isShown = true;
         if (DummyScript.stepFiveIntro) {
             MouseFollower.mouseText = "Leave";
+            if(Input.GetMouseButtonDown(0) && !CharMenu.open) {
+                WorldManager.currentGameWorld = "MainHub";
+                PlayerMovement.teleportPlayer();
+                MouseFollower.isShown = false;
+            }
+
         } else {
             MouseFollower.mouseText = "Can't Currently Access.";
         }
