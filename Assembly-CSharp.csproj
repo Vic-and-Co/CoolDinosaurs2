@@ -53,6 +53,8 @@
     <UnityVersion>2020.3.19f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\Areas\Scripts\MouseFollower.cs" />
+    <Compile Include="Assets\Areas\Scripts\ShipScript.cs" />
     <Compile Include="Assets\Areas\Scripts\WeaponPickup.cs" />
     <Compile Include="Assets\Areas\Scripts\CharMenu.cs" />
     <Compile Include="Assets\Areas\Scripts\Npc\DummyScript.cs" />
@@ -61,6 +63,7 @@
     <Compile Include="Assets\Areas\Scripts\GrappleHook.cs" />
     <Compile Include="Assets\Areas\Scripts\GUI.cs" />
     <Compile Include="Assets\Areas\Scripts\PlayerMovement.cs" />
+    <Compile Include="Assets\Areas\Scripts\WorldManager.cs" />
     <Compile Include="Assets\Areas\Scripts\Objectives.cs" />
     <Compile Include="Assets\Areas\Scripts\TextScenes\Introduction.cs" />
     <Compile Include="Assets\Areas\Scripts\CamMovement.cs" />
@@ -72,17 +75,18 @@
     <Compile Include="Assets\Areas\Scripts\Dropdowns\Weapons\Primary.cs" />
     <Compile Include="Assets\Areas\Scripts\Triggers\KillDummyIntro.cs" />
     <Compile Include="Assets\Areas\Scripts\GunShoot.cs" />
-    <Compile Include="Assets\Areas\Scripts\ShipScript.cs" />
-    <Compile Include="Assets\Areas\Scripts\MouseFollower.cs" />
-    <Compile Include="Assets\Areas\Scripts\WorldManager.cs" />
+    <Compile Include="Assets\Free Pixel Art Forest\Demo\MoveBackground.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
+    <None Include="Assets\Cainos\Pixel Art Platformer - Village Props\Changelog.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
+    <None Include="Assets\Free Pixel Art Forest\Contact.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\Free Pixel Art Hills\contact.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
@@ -92,11 +96,13 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\Free Pixel Art Forest\Lisense.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\Free Pixel Art Forest\readme.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
   </ItemGroup>
   <ItemGroup>

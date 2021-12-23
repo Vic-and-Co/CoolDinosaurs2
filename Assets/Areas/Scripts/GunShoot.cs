@@ -27,8 +27,9 @@ public class GunShoot : MonoBehaviour
     private float pm_nextFireTime;
     private float pm_coolDownTime = 0.2f;
 
-    public AudioSource pb_shootSound;
-    public AudioSource pm_shootSound;
+    public AudioSource gunHolder;
+    public AudioClip pb_shootSound;
+    public AudioClip pm_shootSound;
 
     Vector2 direction;
     void Start()
@@ -96,10 +97,10 @@ public class GunShoot : MonoBehaviour
 
     }
 
-    void shoot(GameObject bullet, float bulletSpeed, AudioSource shootSound) {
+    void shoot(GameObject bullet, float bulletSpeed, AudioClip shootSound) {
         GameObject BulletIns = Instantiate(bullet, pb_shootPoint.position, pb_shootPoint.rotation);
         BulletIns.GetComponent<Rigidbody2D>().AddForce(BulletIns.transform.right * bulletSpeed);
-        shootSound.Play();
+        gunHolder.PlayOneShot(shootSound);
         Destroy(BulletIns, 3);
     }
 
