@@ -5,10 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour {
     public GameObject mainMenu;
+    public GameObject startButton;
 
     public void Start() {
         mainMenu.SetActive(true);
-        SceneManager.UnloadSceneAsync("IntroText");
+        DontDestroyOnLoad(startButton);
+        //SceneManager.UnloadSceneAsync("IntroText");
     }
 
     public void enterIntro() {

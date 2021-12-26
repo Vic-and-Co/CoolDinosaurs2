@@ -12,10 +12,10 @@ public class WorldManager : MonoBehaviour
 
     public void Start() {
         MainHub.SetActive(false);
+        TutorialWorld.SetActive(true);
     }
 
     public void Update() {
-        print(currentGameWorld);
         checkWorld();
     }
 

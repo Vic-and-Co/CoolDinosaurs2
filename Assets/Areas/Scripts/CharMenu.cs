@@ -58,6 +58,7 @@ public class CharMenu : MonoBehaviour
 
     public void toggleUtilDrop() {
         if (utilDropped) {
+            print("util drop");
             utilDrop.SetActive(false);
             utilDropped = false;
         } else {

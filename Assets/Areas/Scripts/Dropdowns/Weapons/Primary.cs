@@ -8,7 +8,7 @@ using TMPro;
 public class Primary : MonoBehaviour
 {
     int primLayer;
-    public TMP_Dropdown primaryDropdown;
+    public Dropdown primaryDropdown;
 
     public static string primarySelect;
     // Start is called before the first frame update

@@ -8,7 +8,7 @@ using TMPro;
 public class Secondary : MonoBehaviour
 {
     int secLayer;
-    public TMP_Dropdown secondaryDropdown;
+    public Dropdown secondaryDropdown;
 
     public static string secondarySelect;
 

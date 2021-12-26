@@ -14,11 +14,11 @@ public class PlayerWeapons : MonoBehaviour
     public static bool pmOwn;
 
 
-    public TMP_Dropdown primaryDropdown;
-    public TMP_Dropdown secondaryDropdown;
+    public Dropdown primaryDropdown;
+    public Dropdown secondaryDropdown;
 
-    public static TMP_Dropdown primaryDropd;
-    public static TMP_Dropdown secondaryDropd;
+    public static Dropdown primaryDropd;
+    public static Dropdown secondaryDropd;
 
     public static int PST_select; //Primary 0, secondary 1, trinary 2
 
@@ -58,8 +58,8 @@ public class PlayerWeapons : MonoBehaviour
     }
 
     public static void addWeapon(string item) {
-        primaryDropd.options.Add(new TMP_Dropdown.OptionData() { text = item });
-        secondaryDropd.options.Add(new TMP_Dropdown.OptionData() { text = item });
+        primaryDropd.options.Add(new Dropdown.OptionData() { text = item });
+        secondaryDropd.options.Add(new Dropdown.OptionData() { text = item });
     }
 
     public void checkOwned() {

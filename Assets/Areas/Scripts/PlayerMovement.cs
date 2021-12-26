@@ -42,6 +42,9 @@ public class PlayerMovement : MonoBehaviour
 
     //Util Cooldown
 
+    //Keybinds
+    public static KeyCode interectKey = KeyCode.F;
+
     void Start() {
         jumpCount = 2;
 

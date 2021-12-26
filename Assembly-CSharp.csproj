@@ -57,6 +57,7 @@
     <Compile Include="Assets\Areas\Scripts\ShipScript.cs" />
     <Compile Include="Assets\Areas\Scripts\WeaponPickup.cs" />
     <Compile Include="Assets\Areas\Scripts\CharMenu.cs" />
+    <Compile Include="Assets\Free Pixel Art Forest\Demo\MoveBackground.cs" />
     <Compile Include="Assets\Areas\Scripts\Npc\DummyScript.cs" />
     <Compile Include="Assets\Areas\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Areas\Scripts\PlayerHealth.cs" />
@@ -75,7 +76,9 @@
     <Compile Include="Assets\Areas\Scripts\Dropdowns\Weapons\Primary.cs" />
     <Compile Include="Assets\Areas\Scripts\Triggers\KillDummyIntro.cs" />
     <Compile Include="Assets\Areas\Scripts\GunShoot.cs" />
-    <Compile Include="Assets\Free Pixel Art Forest\Demo\MoveBackground.cs" />
+    <Compile Include="Assets\Areas\Scripts\MenuMouse.cs" />
+    <Compile Include="Assets\Areas\Scripts\IntroManager.cs" />
+    <Compile Include="Assets\Areas\Scripts\MenuMusic.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

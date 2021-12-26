@@ -19,8 +19,8 @@ public class ShipScript : MonoBehaviour
     public void OnMouseOver() {
         MouseFollower.isShown = true;
         if (DummyScript.stepFiveIntro) {
-            MouseFollower.mouseText = "Leave";
-            if(Input.GetMouseButtonDown(0) && !CharMenu.open) {
+            MouseFollower.mouseText = "["+PlayerMovement.interectKey+"] Leave";
+            if(Input.GetKeyDown(PlayerMovement.interectKey) /*&& !CharMenu.open*/) {
                 WorldManager.currentGameWorld = "MainHub";
                 PlayerMovement.teleportPlayer();
                 MouseFollower.isShown = false;
