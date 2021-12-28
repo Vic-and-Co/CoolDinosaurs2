@@ -21,7 +21,7 @@ public class Objectives : MonoBehaviour
     void Update()
     {
         //print(PlayerWeapons.pbOwn);
-        if (objectiveActive) {
+        if (objectiveActive && !ShipScript.tutorialDone) {
             objectiveDisplay.SetActive(true);
             if (PlayerWeapons.pbOwn == true) {
                 objective.text = "lol. Press tab to open your character menu, click on weapons and equip the PissBaby.";
@@ -39,6 +39,6 @@ public class Objectives : MonoBehaviour
                     }
                 }
             }
-        } else { objectiveDisplay.SetActive(false); }
+        } else { objectiveDisplay.SetActive(false); objectiveActive = false; }
     }
 }

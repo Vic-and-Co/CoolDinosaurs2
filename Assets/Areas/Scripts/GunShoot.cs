@@ -7,18 +7,22 @@ public class GunShoot : MonoBehaviour
     /*Shooty Wooty*/
 
     //Shooter
-    public Transform pissBaby;
+    public Transform pissBaby; //pb
     public GameObject pissBabyObj;
-    public Transform pissMan;
+    public Transform pissMan; //pm
     public GameObject pissManObj;
+    public Transform cockGun; //cg
+    public GameObject cockGunObj;
 
     //Shooted
     public GameObject pb_bullet;
     public GameObject pm_bullet;
+    public GameObject cg_bullet;
 
     //Shoot at
     public Transform pb_shootPoint;
     public Transform pm_shootPoint;
+    public Transform cg_shootPoint;
 
     //Shoot Values
     private float pb_nextFireTime;
@@ -27,9 +31,13 @@ public class GunShoot : MonoBehaviour
     private float pm_nextFireTime;
     private float pm_coolDownTime = 0.2f;
 
+    private float cg_nextFireTime;
+    private float cg_coolDownTime = 0.04f;
+
     public AudioSource gunHolder;
     public AudioClip pb_shootSound;
     public AudioClip pm_shootSound;
+    public AudioClip cg_shootSound;
 
     Vector2 direction;
     void Start()
@@ -41,6 +49,7 @@ public class GunShoot : MonoBehaviour
     void Update() {
         faceMouse(pissBaby);
         faceMouse(pissMan);
+        faceMouse(cockGun);
 
         if (PlayerWeapons.PST_select == 0) { //Accounts for primary selected
 
@@ -63,6 +72,17 @@ public class GunShoot : MonoBehaviour
                     }
                 }
             } else  { pissManObj.SetActive(false); }
+
+            if (Primary.primarySelect == "CockGun") {
+                cockGunObj.SetActive(true);
+                if (Time.time > cg_nextFireTime) {
+                    if (Input.GetMouseButton(0) && !CharMenu.open) {
+                        cg_nextFireTime = Time.time + cg_coolDownTime;
+                        shoot(cg_bullet, 1200, cg_shootSound);
+                    }
+                }
+            }
+            else { cockGunObj.SetActive(false); }
         }
 
         if (PlayerWeapons.PST_select == 1) { //Accounts for secondary selected
@@ -86,6 +106,17 @@ public class GunShoot : MonoBehaviour
                     }
                 }
             } else { pissManObj.SetActive(false); }
+
+            if (Secondary.secondarySelect == "CockGun") {
+                cockGunObj.SetActive(true);
+                if (Time.time > cg_nextFireTime) {
+                    if (Input.GetMouseButton(0) && !CharMenu.open) {
+                        cg_nextFireTime = Time.time + cg_coolDownTime;
+                        shoot(cg_bullet, 1200, cg_shootSound);
+                    }
+                }
+            }
+            else { cockGunObj.SetActive(false); }
         }
     }
 

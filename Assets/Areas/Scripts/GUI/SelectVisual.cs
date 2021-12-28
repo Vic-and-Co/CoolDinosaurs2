@@ -11,6 +11,7 @@ public class SelectVisual : MonoBehaviour
     public Sprite none;
     public Sprite pissBaby;
     public Sprite pissMan;
+    public Sprite cockGun;
 
     public void Start() {
         primarySelectVisual.GetComponent<SpriteRenderer>().sprite = pissBaby;
@@ -36,6 +37,10 @@ public class SelectVisual : MonoBehaviour
             case "PissMan":
                 primarySelectVisual.GetComponent<SpriteRenderer>().sprite = pissMan;
                 break;
+
+            case "CockGun":
+                primarySelectVisual.GetComponent<SpriteRenderer>().sprite = cockGun;
+                break;
         }
     }
 
@@ -51,6 +56,10 @@ public class SelectVisual : MonoBehaviour
 
             case "PissMan":
                 secondarySelectVisual.GetComponent<SpriteRenderer>().sprite = pissMan;
+                break;
+
+            case "CockGun":
+                secondarySelectVisual.GetComponent<SpriteRenderer>().sprite = cockGun;
                 break;
         }
     }

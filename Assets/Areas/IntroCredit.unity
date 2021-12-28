@@ -270,6 +270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicManager: {fileID: 675950150}
+  fridayNight: {fileID: 1126877012}
 --- !u!4 &675950152
 Transform:
   m_ObjectHideFlags: 0

@@ -54,18 +54,23 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\Areas\Scripts\MouseFollower.cs" />
+    <Compile Include="Assets\Areas\Scripts\MenuMouse.cs" />
     <Compile Include="Assets\Areas\Scripts\ShipScript.cs" />
     <Compile Include="Assets\Areas\Scripts\WeaponPickup.cs" />
+    <Compile Include="Assets\Areas\Scripts\MenuMusic.cs" />
     <Compile Include="Assets\Areas\Scripts\CharMenu.cs" />
     <Compile Include="Assets\Free Pixel Art Forest\Demo\MoveBackground.cs" />
     <Compile Include="Assets\Areas\Scripts\Npc\DummyScript.cs" />
     <Compile Include="Assets\Areas\Scripts\MainMenu.cs" />
+    <Compile Include="Assets\Areas\Scripts\PlayerData.cs" />
     <Compile Include="Assets\Areas\Scripts\PlayerHealth.cs" />
+    <Compile Include="Assets\Areas\Scripts\IntroManager.cs" />
     <Compile Include="Assets\Areas\Scripts\GrappleHook.cs" />
     <Compile Include="Assets\Areas\Scripts\GUI.cs" />
     <Compile Include="Assets\Areas\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Areas\Scripts\WorldManager.cs" />
     <Compile Include="Assets\Areas\Scripts\Objectives.cs" />
+    <Compile Include="Assets\Areas\Scripts\SaveSystem.cs" />
     <Compile Include="Assets\Areas\Scripts\TextScenes\Introduction.cs" />
     <Compile Include="Assets\Areas\Scripts\CamMovement.cs" />
     <Compile Include="Assets\Areas\Scripts\BulletCollide.cs" />
@@ -75,10 +80,10 @@
     <Compile Include="Assets\Areas\Scripts\PlayerWeapons.cs" />
     <Compile Include="Assets\Areas\Scripts\Dropdowns\Weapons\Primary.cs" />
     <Compile Include="Assets\Areas\Scripts\Triggers\KillDummyIntro.cs" />
+    <Compile Include="Assets\Areas\Scripts\PlayerLoader.cs" />
     <Compile Include="Assets\Areas\Scripts\GunShoot.cs" />
-    <Compile Include="Assets\Areas\Scripts\MenuMouse.cs" />
-    <Compile Include="Assets\Areas\Scripts\IntroManager.cs" />
-    <Compile Include="Assets\Areas\Scripts\MenuMusic.cs" />
+    <Compile Include="Assets\Areas\Scripts\WeaponData.cs" />
+    <Compile Include="Assets\Areas\Scripts\TutorialData.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

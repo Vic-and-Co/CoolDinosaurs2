@@ -10,10 +10,10 @@ public class WeaponPickup : MonoBehaviour
 
     public GameObject weapon;
 
-    public TMP_Dropdown primaryDropdown;
-    public TMP_Dropdown secondaryDropdown;
+    public Dropdown primaryDropdown;
+    public Dropdown secondaryDropdown;
 
-    public static TMP_Dropdown primaryDrop;
+    public static Dropdown primaryDrop;
 
     // Start is called before the first frame update
     void Start()
@@ -57,6 +57,9 @@ public class WeaponPickup : MonoBehaviour
             PlayerWeapons.addWeapon(item);
             if (item == "PissBaby") {
                 PlayerWeapons.pbOwn = true;
+            }
+            if (item == "PissMan") {
+                PlayerWeapons.pmOwn = true;
             }
         }
     }

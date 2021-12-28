@@ -8,7 +8,7 @@ public class PlayerHealth : MonoBehaviour
     public Text healthText;
     public Image healthBar;
 
-    float health, maxHealth = 100;
+    public static float health, maxHealth = 100;
     float lerpSpeed;
 
     private void Start() {
@@ -21,6 +21,10 @@ public class PlayerHealth : MonoBehaviour
 
         healthBarFiller();
         colorChange();
+
+        if (WorldManager.currentGameWorld == "MainHub") {
+            health = maxHealth;
+        }
     }
 
     void healthBarFiller() {

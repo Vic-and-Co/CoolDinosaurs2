@@ -22,6 +22,10 @@ public class Introduction : MonoBehaviour
         p3.SetActive(false);
         p4.SetActive(false);
         p5.SetActive(false);
+
+        if(PlayerLoader.loadedGame) {
+            SceneManager.LoadScene("MainArea");
+        }
     }
 
     // Update is called once per frame

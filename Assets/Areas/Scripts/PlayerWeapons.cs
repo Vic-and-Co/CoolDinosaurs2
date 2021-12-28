@@ -7,10 +7,7 @@ using UnityEngine.EventSystems;
 
 public class PlayerWeapons : MonoBehaviour
 {
-    //[SerializeField] public bool pbOwned = false;
-    public static bool pbOwn = false;
-
-    //[SerializeField] public bool pmOwned = false;
+    public static bool pbOwn;
     public static bool pmOwn;
 
 
@@ -23,11 +20,14 @@ public class PlayerWeapons : MonoBehaviour
     public static int PST_select; //Primary 0, secondary 1, trinary 2
 
     public static HashSet<string> primarySecondaryOptions = new HashSet<string>();
+
     private void Awake() {
+
     }
 
     private void Start() {
-
+        //LoadWeapons();
+        //primarySecondaryOptions.Clear();
     }
 
     void Update() {
@@ -58,17 +58,31 @@ public class PlayerWeapons : MonoBehaviour
     }
 
     public static void addWeapon(string item) {
-        primaryDropd.options.Add(new Dropdown.OptionData() { text = item });
-        secondaryDropd.options.Add(new Dropdown.OptionData() { text = item });
+        //if (!primarySecondaryOptions.Contains(item)) {
+            primaryDropd.options.Add(new Dropdown.OptionData() { text = item });
+            secondaryDropd.options.Add(new Dropdown.OptionData() { text = item });
+
+            primarySecondaryOptions.Add(item);
+        //}
     }
 
-    public void checkOwned() {
-        
+    public void SaveWeapons() {
+        SaveSystem.SaveWeapons(this);
+    }
+
+    public void LoadWeapons() {
+        if (PlayerLoader.loadedGame) {
+            WeaponData weaponData = SaveSystem.LoadWeapons();
+
+            pbOwn = weaponData.pbOwned;
+            if (weaponData.pbOwned) { addWeapon("PissBaby"); }
+
+            pmOwn = weaponData.pmOwned;
+            if (weaponData.pmOwned) { addWeapon("PissMan"); }
+        }
     }
 
     /*Relay*/
     private void relayWeapons() {
-        //pbOwn = pbOwned;
-        //pmOwn = pmOwned;
     }
 }

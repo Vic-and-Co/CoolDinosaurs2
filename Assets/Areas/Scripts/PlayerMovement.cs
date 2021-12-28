@@ -65,9 +65,6 @@ public class PlayerMovement : MonoBehaviour
 
         checkEquippables();
         checkModifiers();
-
-        //print("Primary is " + Primary.primarySelect);
-        //print("Secondary is " + Secondary.secondarySelect);
     }
 
     private void jump() {
