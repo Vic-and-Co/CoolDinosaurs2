@@ -8,21 +8,17 @@ using UnityEngine;
 
 public class PlayerTools : MonoBehaviour
 {
-    [SerializeField] public bool tabiOwned = false;
-    public static bool tabiOwn;
+    public static bool tabiOwn = false;
 
-    [SerializeField] public bool aidsBootOwned = false;
-    public static bool aidsBootOwn;
+    public static bool aidsBootOwn = false;
 
-    [SerializeField] public bool dashOwned = false;
-    public static bool dashOwn;
+    public static bool dashOwn = false;
 
-    [SerializeField] public bool grappleOwned = false;
-    public static bool grappleOwn;
+    public static bool grappleOwn = false;
 
     //Value Adder
-    [SerializeField] public int aidsBootBoost;
     public static int aidsBootSpeed;
+    public static int boostJump = 0;
 
     void Update()
     {
@@ -30,7 +26,6 @@ public class PlayerTools : MonoBehaviour
         //checkOwned();
 
         //Relay
-        relayItems();
         relayModifiers();
     }
 
@@ -40,9 +35,9 @@ public class PlayerTools : MonoBehaviour
 
     /*DEBUG*/
     public void ownEverything() {
-        tabiOwned = true;
-        aidsBootOwned = true;
-        grappleOwned = true;
+        tabiOwn = true;
+        aidsBootOwn = true;
+        grappleOwn = true;
     }
 
     /*Tools Allowed Relay*/
@@ -51,18 +46,32 @@ public class PlayerTools : MonoBehaviour
     }
 
     /* Relay */
-    private void relayItems() {
-        tabiOwn = tabiOwned;
-        aidsBootOwn = aidsBootOwned;
-        dashOwn = dashOwned;
-        grappleOwn = grappleOwned;
-    }
-
     private void relayModifiers() {
-        if (aidsBootOwned) {
-            aidsBootSpeed = aidsBootBoost;
+        if (aidsBootOwn) {
+            aidsBootSpeed = 10;
         } else {
             aidsBootSpeed = 0;
+        }
+    }
+
+    public static void buyTabi() {
+        if (MoneyManager.thonDollars >= 10) {
+            if (!tabiOwn) {
+                tabiOwn = true;
+                boostJump++;
+                MoneyManager.addMoney(-10);
+            }
+            else {
+                boostJump++;
+                MoneyManager.addMoney(-10);
+            }
+        }
+    }
+
+    public static void sellTabi() {
+        if (boostJump > 0) {
+            boostJump--;
+            MoneyManager.addMoney(5);
         }
     }
 }

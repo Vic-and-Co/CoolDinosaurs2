@@ -28,32 +28,30 @@ public class CharMenu : MonoBehaviour
         menu();
     }
 
-    public void openMenu() {
-        charMenu.SetActive(true);
-        GUI.guiActive = false;
-        Objectives.objectiveActive = false;
-        open = true;
-
-        //Time.timeScale = 0f;
-    }
-
-    public void closeMenu() {
-        charMenu.SetActive(false);
-        GUI.guiActive = true;
-        Objectives.objectiveActive = true;
-        open = false;
-
-        //Time.timeScale = 1f;
+    public void menuHandle() {
+        if(open) {
+            LocationMenu.open = false;
+            charMenu.SetActive(true);
+            GUI.guiActive = false;
+            Objectives.objectiveActive = false;
+            ShopScript.shopOpen = false;
+        } else {
+            charMenu.SetActive(false);
+            //GUI.guiActive = true;
+            //Objectives.objectiveActive = true;
+            open = false;
+        }
     }
 
     public void menu() {
         if (Input.GetKeyDown(KeyCode.Tab)) {
             if (open) {
-                closeMenu();
+                open = false;
             } else {
-                openMenu();
+                open = true;
             }
         }
+        menuHandle();
     }
 
     public void toggleUtilDrop() {

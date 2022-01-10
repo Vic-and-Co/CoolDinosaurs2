@@ -20,6 +20,11 @@ public class Objectives : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (CharMenu.open || LocationMenu.open) {
+            objectiveActive = false;
+        }
+        else { objectiveActive = true; }
+
         //print(PlayerWeapons.pbOwn);
         if (objectiveActive && !ShipScript.tutorialDone) {
             objectiveDisplay.SetActive(true);

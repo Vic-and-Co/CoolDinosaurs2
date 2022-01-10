@@ -9,6 +9,7 @@ public class PlayerWeapons : MonoBehaviour
 {
     public static bool pbOwn;
     public static bool pmOwn;
+    public static bool cgOwn;
 
 
     public Dropdown primaryDropdown;
@@ -79,6 +80,9 @@ public class PlayerWeapons : MonoBehaviour
 
             pmOwn = weaponData.pmOwned;
             if (weaponData.pmOwned) { addWeapon("PissMan"); }
+
+            cgOwn = weaponData.cgOwned;
+            if (weaponData.cgOwned) { addWeapon("CockGun"); }
         }
     }
 

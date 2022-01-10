@@ -36,13 +36,13 @@ public class PlayerHealth : MonoBehaviour
         healthBar.color = healthColor;
     }
 
-    public void playerDamage(float damagePoints) {
+    public static void playerDamage(float damagePoints) {
         if(health > 0) {
             health -= damagePoints;
         }
     }
 
-    public void playerHeal(float healPoints) {
+    public static void playerHeal(float healPoints) {
         if (health < maxHealth) {
             health += healPoints;
         }

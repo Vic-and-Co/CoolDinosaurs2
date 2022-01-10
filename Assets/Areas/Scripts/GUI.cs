@@ -9,6 +9,10 @@ public class GUI : MonoBehaviour
     public static bool guiActive = true;
 
     public void Update() {
+        if(CharMenu.open || LocationMenu.open) {
+            guiActive = false;
+        } else { guiActive = true; }
+
         if(guiActive) {
             gui.SetActive(true);
         } else { gui.SetActive(false); }

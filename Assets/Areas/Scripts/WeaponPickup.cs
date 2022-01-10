@@ -55,11 +55,16 @@ public class WeaponPickup : MonoBehaviour
             //secondaryDropdown.options.Add(new TMP_Dropdown.OptionData() { text = item });
             PlayerWeapons.primarySecondaryOptions.Add(item);
             PlayerWeapons.addWeapon(item);
-            if (item == "PissBaby") {
-                PlayerWeapons.pbOwn = true;
-            }
-            if (item == "PissMan") {
-                PlayerWeapons.pmOwn = true;
+            switch(item) {
+                case "PissBaby":
+                    PlayerWeapons.pbOwn = true;
+                    break;
+                case "PissMan":
+                    PlayerWeapons.pmOwn = true;
+                    break;
+                case "CockGun":
+                    PlayerWeapons.cgOwn = true;
+                    break;
             }
         }
     }

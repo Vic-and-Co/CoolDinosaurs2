@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7097502181067615709}
   m_Layer: 0
   m_Name: PB_Bullet
-  m_TagString: pb_bullet
+  m_TagString: tinyDmgBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -144,5 +144,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe1086aeb58003146beb98f447f46de2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmgStrength: 10
-  dmgText: {fileID: 6940905803157866356, guid: 348dd7e5e904f1745b3ec229dfa4073c, type: 3}
+  groundAllow: 0

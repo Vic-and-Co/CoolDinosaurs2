@@ -12,8 +12,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jumpHeight;
     [SerializeField] private float jumpForce;
 
-    [SerializeField] private int boostJump = 2;
-
 
     public Transform groundCheck;
     public LayerMask groundObjects;
@@ -73,11 +71,11 @@ public class PlayerMovement : MonoBehaviour
                 body.velocity = Vector2.up * jumpForce;
             }
 
-            if (Input.GetButtonDown("Jump") && jumpCount < boostJump) {
+            if (Input.GetButtonDown("Jump") && jumpCount < 1 + PlayerTools.boostJump) {
                 jumpTimeCounter = jumpTime;
             }
             if (Input.GetButton("Jump")) { //Jump Cut
-                if (jumpTimeCounter > 0 && jumpCount < boostJump) {
+                if (jumpTimeCounter > 0 && jumpCount < 1 + PlayerTools.boostJump) {
                     body.velocity = Vector2.up * jumpForce;
                     jumpTimeCounter -= Time.deltaTime;
 
@@ -171,13 +169,31 @@ public class PlayerMovement : MonoBehaviour
         teleported = false;
     }
 
+    private void resetTP() {
+        teleport = false;
+        teleported = true;
+        LocationMenu.open = false;
+    }
+
     private void teleportOnWorldChange() {
         if (teleport & !teleported) {
-            if(WorldManager.currentGameWorld == "MainHub") {
+            /*if(WorldManager.currentGameWorld == "MainHub") {
                 //change coords here -30, -63
+                //arearoam1 body.position = new Vector3(62f, -63f);
                 body.position = new Vector3(-30f, -63f);
                 teleport = false;
                 teleported = true;
+            }*/
+
+            switch(WorldManager.currentGameWorld) {
+                case "MainHub":
+                    body.position = new Vector3(-30f, -63f);
+                    resetTP();
+                    break;
+                case "Plains":
+                    body.position = new Vector3(73f, -63f);
+                    resetTP();
+                    break;
             }
         }
     }

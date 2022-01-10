@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4057811085111495999}
   m_Layer: 0
   m_Name: CG_Bullet
-  m_TagString: pb_bullet
+  m_TagString: specialTinyDmgBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

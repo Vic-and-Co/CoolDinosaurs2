@@ -8,6 +8,9 @@ TagManager:
   - Barrier
   - pb_bullet
   - Dummy
+  - tinyDmgBullet
+  - specialTinyDmgBullet
+  - tinyEnemy
   layers:
   - Default
   - TransparentFX
